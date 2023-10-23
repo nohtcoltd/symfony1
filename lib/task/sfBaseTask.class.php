@@ -21,7 +21,8 @@ abstract class sfBaseTask extends sfCommandApplicationTask
   protected
     $configuration   = null,
     $pluginManager   = null,
-    $statusStartTime = null;
+    $statusStartTime = null,
+    $filesystem      = null;
 
   /**
    * @see sfTask
@@ -91,7 +92,7 @@ abstract class sfBaseTask extends sfCommandApplicationTask
    */
   public function getFilesystem()
   {
-    if (!isset($this->filesystem))
+    if (!isset($this->filesystem) || $this->filesystem === null)
     {
       if ($this->isVerbose())
       {

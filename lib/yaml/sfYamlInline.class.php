@@ -397,7 +397,7 @@ class sfYamlInline
         return (int) self::parseScalar(substr($scalar, 2));
       case 0 === strpos($scalar, '!!php/object:'):
         return unserialize(substr($scalar, 13));
-      case ctype_digit($scalar):
+      case ctype_digit((string)$scalar):
         $raw = $scalar;
         $cast = (int) $scalar;
         return '0' == $scalar[0] ? octdec($scalar) : (((string) $raw == (string) $cast) ? $cast : $raw);

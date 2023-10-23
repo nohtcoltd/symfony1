@@ -58,7 +58,7 @@ class sfOutputEscaperIteratorDecorator extends sfOutputEscaperObjectDecorator im
    */
   public function rewind(): void
   {
-    return $this->iterator->rewind();
+    $this->iterator->rewind();
   }
 
   /**
@@ -88,7 +88,7 @@ class sfOutputEscaperIteratorDecorator extends sfOutputEscaperObjectDecorator im
    */
   public function next(): void
   {
-    return $this->iterator->next();
+    $this->iterator->next();
   }
 
   /**

@@ -850,7 +850,7 @@ class sfWebRequest extends sfRequest
    */
   static protected function fixPhpFilesArray(array $data)
   {
-    $fileKeys = array('error', 'name', 'size', 'tmp_name', 'type');
+    $fileKeys = array('error', 'full_path', 'name', 'size', 'tmp_name', 'type');
     $keys = array_keys($data);
     sort($keys);
 
