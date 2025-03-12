@@ -366,7 +366,7 @@ class sfException extends Exception
    */
   static protected function fileExcerpt($file, $line)
   {
-    if (is_readable($file))
+    if (is_string($file) && is_readable($file))
     {
       $content = preg_split('#<br />#', preg_replace('/^<code>(.*)<\/code>$/s', '$1', highlight_file($file, true)));
 

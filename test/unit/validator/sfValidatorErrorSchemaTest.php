@@ -176,11 +176,11 @@ catch (LogicException $e)
 // implements Serializable
 $t->diag('implements Serializable');
 
-class NotSerializable implements Serializable
+class NotSerializable
 {
-  public function serialize()
+  public function __serialize()
   {
-    throw new Exception('Not serializable');
+    throw new __Exception('Not serializable');
   }
 
   public function unserialize($serialized)
